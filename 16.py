@@ -82,7 +82,8 @@ for i in keypoints:
                     direction = corners[(x,y)][1]
                 else:
                     direction = corners[(x,y)][0]
-        routes[(i,j)].append((score,(x,y),direction))
+        if i != (x,y):
+            routes[(i,j)].append((score,(x,y),direction))
 
 positions = [(0,start,">",False)]
 heapq.heapify(positions)
