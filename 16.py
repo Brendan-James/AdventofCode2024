@@ -72,7 +72,7 @@ for i in keypoints:
         x,y = i
         direction = j
         score = 0
-        while (x,y) == i or (x,y) not in keypoints:
+        while (x,y) not in keypoints or score == 0:
             x+=dirs[direction][0]
             y+=dirs[direction][1]
             score+=1
